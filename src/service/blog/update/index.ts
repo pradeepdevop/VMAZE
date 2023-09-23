@@ -3,11 +3,12 @@ export interface UpdateBlog {
   id?: string;
   content?: string;
   comment?: string;
+  title?:string
 }
 export default async (payload: UpdateBlog) => {
-  const updateBlog = await model.blog.findOneAndUpdate(
+  const updateBlog = await model.blog.updateOne(
     { _id: payload.id },
-    { $set: { content: payload.content } }
+    { ...payload}
   );
   return updateBlog;
 };

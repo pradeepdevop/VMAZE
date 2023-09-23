@@ -5,6 +5,7 @@ export interface UserType {
   lastName?: string;
   email?: string;
   password?: string;
+  profile?:string;
   createdAt?: Date;
   updatedAt?: Date;
 }

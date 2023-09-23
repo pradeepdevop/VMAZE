@@ -8,9 +8,9 @@ import getBlogById from "./get";
 const router = Router();
 
 router.post("/", createBlog);
-router.get("/", getBlogById);
+router.get("/:id", getBlogById);
 router.put("/:id", updateBlog);
-router.put("/:id", deleteBlog);
+router.put("/delblog/:id", deleteBlog);
 router.get("/", listBlog);
 
 export default router;

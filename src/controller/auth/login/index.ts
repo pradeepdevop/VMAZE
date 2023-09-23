@@ -19,13 +19,12 @@ export default async (req: Request, res: Response, next: NextFunction) => {
       email: user.email as string,
       password: user.password as string,
     };
-
+    
     const { token } = await generateToken(tokenPayload);
 
     return res.json({
       status: 200,
       message: utils.SuccessMessage.LOGIN_SUCCESSFULL,
-      user,
       token,
     });
   } catch (error) {

@@ -1,6 +1,7 @@
 import { model, Schema } from "mongoose";
 
 export interface BlogType {
+  title?:string;
   content?: string;
   comment?: string;
   file?: string;
@@ -11,6 +12,9 @@ export interface BlogType {
 
 const blog: Schema<BlogType> = new Schema(
   {
+    title:{
+      type:String
+    },
     content: {
       type: String,
     },
